@@ -76,10 +76,22 @@ export type TopicCategory =
   | "rules";
 
 export interface GarbageRecycling {
-  /** HOST: Pickup day(s), e.g. "Tuesday morning" */
-  pickupSchedule: string;
+  /** Short badge label, e.g. "Monday Morning Pickup" */
+  pickupBadge: string;
+  /** HOST: Pickup day(s) */
+  pickupDay: string;
+  /** When to bring bins to the street */
+  curbsideDay: string;
   /** Where bins are located */
   binLocation: string;
+  trashBinColor: string;
+  trashBinLabel: string;
+  recyclingBinColor: string;
+  recyclingBinLabel: string;
+  /** Shown when stay may overlap pickup week */
+  sundayStayIntro: string;
+  baggingNote: string;
+  closingNote: string;
   instructions: string[];
   recyclingRules: string[];
 }
@@ -87,7 +99,6 @@ export interface GarbageRecycling {
 export interface CheckoutGuide {
   time: string;
   checklist: string[];
-  garbage: string[];
   dishwasher: string[];
   grill: string[];
 }
@@ -396,17 +407,28 @@ export const property: Property = {
 
   garbage: {
     // HOST: Actual pickup schedule
-    pickupSchedule: "Tuesday morning — place bins at the curb Monday evening",
-    binLocation: "Side of the garage — gray trash, blue recycling",
+    pickupBadge: "Monday Morning Pickup",
+    pickupDay: "Monday morning",
+    curbsideDay: "Sunday evening",
+    binLocation: "Side of the garage",
+    trashBinColor: "gray",
+    trashBinLabel: "regular trash",
+    recyclingBinColor: "green",
+    recyclingBinLabel: "recycling",
+    sundayStayIntro:
+      "If your stay includes Sunday evening, please help prepare for weekly trash collection.",
+    baggingNote:
+      "Please ensure all household trash is bagged and placed in the appropriate bin before departure.",
+    closingNote:
+      "Thank you for helping us keep the property clean and ready for future guests.",
     instructions: [
-      "Trash (gray bin): bagged household waste only.",
-      "Recycling (blue bin): rinse containers; no plastic bags inside.",
-      "Pull bins to the curb Monday evening if you're here on pickup week.",
+      "Trash pickup occurs on Monday morning.",
+      "Please bring all trash and recycling bins to the street on Sunday evening.",
+      "The bins are located on the side of the garage.",
     ],
     recyclingRules: [
-      "Cardboard: flatten boxes.",
-      "Glass, metal cans, and plastic #1–2 accepted.",
-      "No styrofoam or plastic bags in recycling.",
+      "The green bin is for recycling.",
+      "The gray bins are for regular trash.",
     ],
   },
 
@@ -417,10 +439,6 @@ export const property: Property = {
       "Load and start the dishwasher — or wash and put away dishes.",
       "Take trash to the bins by the garage.",
       "Turn off all fireplaces and fire tables.",
-    ],
-    garbage: [
-      "Bag all trash and place in the gray bin by the garage.",
-      "Recycling in the blue bin — see Garbage section for rules.",
     ],
     dishwasher: [
       "Load all used dishes, glasses, and utensils.",
