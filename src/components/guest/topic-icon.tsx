@@ -1,14 +1,26 @@
 import {
-  Wifi,
-  Thermometer,
-  Blinds,
-  Speaker,
-  Tv,
-  Flame,
-  Map,
-  LogOut,
+  Airplay,
   AlertCircle,
+  Anchor,
+  Armchair,
+  Blinds,
+  Fish,
+  Flame,
+  KeyRound,
   Lightbulb,
+  LogOut,
+  Map,
+  MapPin,
+  Mic,
+  Sailboat,
+  Speaker,
+  Sun,
+  Thermometer,
+  Trees,
+  Tv,
+  UtensilsCrossed,
+  Waves,
+  Wifi,
   type LucideIcon,
 } from "lucide-react";
 
@@ -21,6 +33,18 @@ const iconMap: Record<string, LucideIcon> = {
   tv: Tv,
   flame: Flame,
   firepit: Flame,
+  key: KeyRound,
+  anchor: Anchor,
+  armchair: Armchair,
+  trees: Trees,
+  sailboat: Sailboat,
+  sun: Sun,
+  waves: Waves,
+  fish: Fish,
+  utensils: UtensilsCrossed,
+  "map-pin": MapPin,
+  airplay: Airplay,
+  mic: Mic,
   map: Map,
   checkout: LogOut,
   emergency: AlertCircle,
@@ -34,5 +58,5 @@ export function TopicIcon({
   className?: string;
 }) {
   const Icon = iconMap[name] ?? Map;
-  return <Icon className={className} aria-hidden />;
+  return <Icon className={className} aria-hidden strokeWidth={2.25} />;
 }

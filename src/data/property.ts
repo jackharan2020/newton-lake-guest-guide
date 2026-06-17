@@ -53,6 +53,9 @@ export interface InstructionTopic {
   category: TopicCategory;
   /** URL path segment, e.g. "/systems/thermostat" */
   href: string;
+  /** Lucide icon key — see TopicIcon */
+  icon: string;
+  accent: SystemAccent;
   steps: InstructionStep[];
   troubleshooting?: string[];
   /** Override default "Troubleshooting" footer heading (e.g. "Important Notes") */
@@ -1068,6 +1071,8 @@ export const property: Property = {
       summary: "Warm tile in bathrooms",
       category: "systems",
       href: "/systems/heated-floors",
+      icon: "thermometer",
+      accent: "amber",
       steps: [
         // HOST: Confirm if property has heated floors and update
         { text: "Look for the timer switch on the bathroom wall (usually near the door)." },
@@ -1085,6 +1090,8 @@ export const property: Property = {
       summary: "Front door keypad",
       category: "systems",
       href: "/systems/smart-lock",
+      icon: "key",
+      accent: "lake",
       steps: [
         { text: "Your door code is in your Airbnb confirmation message." },
         { text: "Enter the code on the keypad, then press the checkmark button." },
@@ -1103,6 +1110,8 @@ export const property: Property = {
       summary: "Cameras and voice assistant",
       category: "systems",
       href: "/systems/smart-home",
+      icon: "mic",
+      accent: "teal",
       steps: [
         { text: "Google Home speaker is in the kitchen — say 'Hey Google' for weather or timers." },
         { text: "Outdoor cameras cover the driveway only — not inside the home." },
@@ -1120,6 +1129,8 @@ export const property: Property = {
       summary: "Watch streaming apps",
       category: "entertainment",
       href: "/entertainment/tv",
+      icon: "tv",
+      accent: "amber",
       photoPath: "/images/interior/living-room/living-room-lake-view.png",
       photoAlt: "Living room TV above the fireplace",
       steps: [
@@ -1141,6 +1152,8 @@ export const property: Property = {
       summary: "Play music indoors and on the deck",
       category: "entertainment",
       href: "/entertainment/speakers",
+      icon: "speaker",
+      accent: "teal",
       steps: [
         { text: "Speakers are built into the ceiling on the upper deck and in the great room." },
         { text: "Use AirPlay from your iPhone — see Speakers & Music in the guide." },
@@ -1157,6 +1170,8 @@ export const property: Property = {
       summary: "Stream music to speakers or TV",
       category: "entertainment",
       href: "/entertainment/airplay",
+      icon: "airplay",
+      accent: "lake",
       steps: [
         { text: "Connect your iPhone to the guest Wi-Fi first (see home screen)." },
         { text: "Open Music, Spotify, or any app playing audio." },
@@ -1176,6 +1191,8 @@ export const property: Property = {
       summary: "Voice assistant in the kitchen",
       category: "entertainment",
       href: "/entertainment/google-home",
+      icon: "mic",
+      accent: "slate",
       steps: [
         { text: "Say 'Hey Google' followed by your request." },
         { text: "Try: 'Hey Google, what's the weather?'" },
@@ -1195,6 +1212,8 @@ export const property: Property = {
       summary: "Great room fireplace",
       category: "fire",
       href: "/fire/indoor",
+      icon: "flame",
+      accent: "fire",
       photoPath: "/images/interior/living-room/living-room-lake-view.png",
       photoAlt: "Gas fireplace in the great room",
       steps: [
@@ -1217,6 +1236,8 @@ export const property: Property = {
       summary: "Deck and patio fire pits",
       category: "fire",
       href: "/fire/outdoor-table",
+      icon: "flame",
+      accent: "fire",
       photoPath: "/images/exterior/deck/upper-deck-fire-pit-lake-view.png",
       photoAlt: "Upper deck fire table",
       steps: [
@@ -1240,6 +1261,8 @@ export const property: Property = {
       summary: "Lower patio charcoal grill",
       category: "fire",
       href: "/fire/charcoal-grill",
+      icon: "utensils",
+      accent: "amber",
       photoPath: "/images/exterior/patio/lower-patio-lounge-lake-view.jpg",
       photoAlt: "Lower covered patio with charcoal grill",
       steps: [
@@ -1277,6 +1300,8 @@ export const property: Property = {
       summary: "Lounge, fire table, lake views",
       category: "outdoor",
       href: "/outdoor/deck",
+      icon: "sun",
+      accent: "gold",
       photoPath: "/images/exterior/deck/upper-deck-fire-pit-lake-view.png",
       photoAlt: "Upper deck with seating and lake view",
       steps: [
@@ -1291,6 +1316,8 @@ export const property: Property = {
       summary: "Covered seating under the deck",
       category: "outdoor",
       href: "/outdoor/patio",
+      icon: "armchair",
+      accent: "lake",
       photoPath: "/images/exterior/patio/lower-patio-lounge-lake-view.jpg",
       photoAlt: "Lower covered patio",
       steps: [
@@ -1305,6 +1332,8 @@ export const property: Property = {
       summary: "Shaded spot on the back lawn",
       category: "outdoor",
       href: "/outdoor/gazebo",
+      icon: "trees",
+      accent: "evergreen",
       photoPath: "/images/exterior/backyard/gazebo-lawn-lake-view.jpg",
       photoAlt: "White gazebo on the lawn",
       steps: [
@@ -1318,6 +1347,8 @@ export const property: Property = {
       summary: "Seating, swim ladder, and lake access",
       category: "outdoor",
       href: "/outdoor/dock",
+      icon: "anchor",
+      accent: "lake",
       photoPath: "/images/exterior/dock/dock-seating-swim-ladder.jpg",
       photoAlt: "Dock with seating and swim ladder",
       steps: [
@@ -1337,6 +1368,8 @@ export const property: Property = {
       summary: "Two kayaks on the lawn",
       category: "outdoor",
       href: "/outdoor/kayaks",
+      icon: "sailboat",
+      accent: "teal",
       photoPath: "/images/exterior/patio/covered-dining-kayaks.jpg",
       photoAlt: "Kayaks stored near the patio",
       steps: [
@@ -1352,6 +1385,8 @@ export const property: Property = {
       summary: "Newton Lake fishing basics",
       category: "outdoor",
       href: "/outdoor/fishing",
+      icon: "fish",
+      accent: "slate",
       steps: [
         { text: "Pennsylvania fishing license required for anglers 16+ — purchase online at fishandboat.com or at Lake Mart on PA-247." },
         { text: "Fish from the dock or kayaks — no casting from the deck over neighbors." },
@@ -1364,6 +1399,8 @@ export const property: Property = {
       summary: "Safety and water conditions",
       category: "outdoor",
       href: "/outdoor/lake",
+      icon: "waves",
+      accent: "lake",
       steps: [
         { text: "No lifeguard — swim at your own risk." },
         { text: "Children must be supervised at all times near the water." },
