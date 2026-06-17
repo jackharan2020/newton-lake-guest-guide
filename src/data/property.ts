@@ -28,7 +28,6 @@ export interface WifiConfig {
 export interface HostContact {
   name: string;
   phone: string;
-  email: string;
   responseTime: string;
 }
 
@@ -91,7 +90,6 @@ export interface CheckoutGuide {
 }
 
 export interface SmartLockInfo {
-  location: string;
   steps: InstructionStep[];
   troubleshooting: string[];
 }
@@ -361,10 +359,10 @@ export const property: Property = {
 
   host: {
     // HOST: Your contact info
-    name: "Sarah & Michael",
-    phone: "+1 (603) 555-0142",
-    email: "hello@newtonlakehouse.com",
-    responseTime: "Usually responds within an hour",
+    name: "Frank",
+    phone: "(408) 768-4163",
+    responseTime:
+      "Text messages are often the fastest way to reach him.",
   },
 
   emergency: {
@@ -376,15 +374,10 @@ export const property: Property = {
       { label: "Poison Control", phone: "1-800-222-1222" },
       // HOST: Add local fire/police non-emergency if desired
     ],
-    notes: [
-      "Fire extinguisher: kitchen and garage.",
-      "First aid kit: master bathroom cabinet.",
-      "Property address is on the refrigerator.",
-    ],
+    notes: [],
   },
 
   smartLock: {
-    location: "Front door and lake-side door",
     steps: [
       { text: "Your door code is in your Airbnb confirmation message." },
       { text: "Enter the code on the keypad, then press the checkmark button." },

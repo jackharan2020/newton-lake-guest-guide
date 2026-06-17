@@ -9,7 +9,7 @@ A premium mobile-first PWA companion app for Newton Lake House guests. Built wit
 - **House Guide** — Accordion sections covering every aspect of the stay
 - **Local Picks** — Curated dining, outdoor, and culture recommendations
 - **Property Map** — Interactive SVG map with tappable zones
-- **Contact Host** — Text, call, and email links
+- **Contact Host** — Call and text links
 - **PWA** — Installable, offline fallback, QR-code friendly
 
 ## Getting Started

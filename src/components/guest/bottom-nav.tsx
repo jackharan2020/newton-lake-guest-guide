@@ -9,6 +9,7 @@ import {
   BookOpen,
   LogOut,
 } from "lucide-react";
+import { useHydrated } from "@/hooks/use-hydrated";
 import { cn } from "@/lib/utils";
 
 const items = [
@@ -21,6 +22,7 @@ const items = [
 
 export function GuestBottomNav() {
   const pathname = usePathname();
+  const hydrated = useHydrated();
 
   return (
     <nav
@@ -30,11 +32,12 @@ export function GuestBottomNav() {
       <div className="mx-auto grid max-w-lg grid-cols-5">
         {items.map(({ href, label, icon: Icon }) => {
           const isActive =
-            href === "/"
+            hydrated &&
+            (href === "/"
               ? pathname === "/"
               : pathname === href ||
                 pathname.startsWith(`${href}/`) ||
-                (href === "/outdoor" && pathname.startsWith("/fire"));
+                (href === "/outdoor" && pathname.startsWith("/fire")));
 
           return (
             <Link

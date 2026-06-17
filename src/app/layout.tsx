@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: property.displayName.split(" ")[0],
   },
   formatDetection: {
-    telephone: true,
+    telephone: false,
   },
   manifest: "/manifest.webmanifest",
   icons: {
